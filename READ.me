@@ -1,0 +1,46 @@
+# Framework de Automatizacion de Pruebas - Trabajo Final
+
+Este repositorio contiene el Trabajo Final Integrador, un framework de automatizacion hibrido que combina pruebas de UI con Selenium WebDriver y pruebas de API con Requests.
+
+## Proposito
+Demostrar la capacidad de crear una arquitectura de pruebas escalable, mantenible y robusta utilizando Python y patrones de diseño como Page Object Model (POM).
+
+## Tecnologias Utilizadas
+- Python 3
+- Pytest (Runner y Assertions)
+- Selenium WebDriver (UI Automation)
+- Requests (API Automation)
+- Pytest-html (Reportes)
+- GitHub Actions (CI/CD)
+
+## Estructura del Proyecto
+- /config: Variables globales de configuracion.
+- /data: Archivos JSON para pruebas basadas en datos (Data Driven).
+- /pages: Clases que representan las paginas web (POM).
+- /tests: Contiene los scripts de prueba divididos en UI y API.
+- /utils: Utilidades como el logger personalizado.
+- conftest.py: Configuracion de fixtures y hooks de Pytest.
+
+## Instalacion
+1. Clonar el repositorio.
+2. Crear un entorno virtual (opcional pero recomendado).
+3. Instalar las dependencias:
+   pip install -r requirements.txt
+
+## Ejecucion de Pruebas
+Para ejecutar todas las pruebas y generar el reporte:
+
+pytest --html=reports/reporte.html --self-contained-html
+
+Para ejecutar solo pruebas de UI:
+pytest tests/ui
+
+Para ejecutar solo pruebas de API:
+pytest tests/api
+
+## Reportes
+Los reportes se generan en la carpeta /reports. El archivo HTML incluye:
+- Resumen de pruebas pasadas/falladas.
+- Duracion de cada prueba.
+- Logs capturados.
+- Capturas de pantalla adjuntas automaticamente en caso de falla en pruebas de UI.
