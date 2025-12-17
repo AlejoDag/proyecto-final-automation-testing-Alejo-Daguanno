@@ -25,13 +25,11 @@ class CheckoutPage(BasePage):
         self.send_keys(self.ZIP_CODE, zip_code)
 
     def click_continue(self):
-        # CLICK REAL (NO JS)
         btn = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.CONTINUE_BTN)
         )
         btn.click()
 
-        # Esperar navegación real
         WebDriverWait(self.driver, 10).until(
             EC.url_contains("checkout-step-two.html")
         )
@@ -43,3 +41,4 @@ class CheckoutPage(BasePage):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.SUCCESS_HEADER)
         ).text
+
