@@ -6,8 +6,6 @@ from pages.inventory_page import InventoryPage
 from pages.checkout_page import CheckoutPage
 from selenium.webdriver.support.ui import WebDriverWait
 
-
-# Carga de datos de prueba
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.dirname(current_dir))
 json_path = os.path.join(project_root, 'datos', 'test_data.json')
@@ -66,7 +64,7 @@ class TestUI:
         # 3. Llenar formulario de información
         checkout_page.fill_information("Juan", "Perez", "1234")
 
-        # 4. PASO CRUCIAL: Ir a la siguiente página (Overview)
+        # 4. Ir a la siguiente página
         checkout_page.click_continue()
 
         # 5. Finalizar la compra
@@ -77,3 +75,4 @@ class TestUI:
             lambda d: checkout_page.get_success_message()
         )   
         assert "Thank you for your order!" in mensaje
+
