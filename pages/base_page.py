@@ -41,3 +41,4 @@ class BasePage:
 
     def get_text(self, locator):
         return self.find_element(locator).text
+
